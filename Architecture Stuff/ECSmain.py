@@ -9,8 +9,8 @@ def main():
     world = e.World()
     
     # Create many entities, but only some with both components
-    num_entities = 10000
-    num_with_both = 1000
+    num_entities = 1000000
+    num_with_both = 100000
     
     for i in range(num_entities):
         entity = world.create_entity()
