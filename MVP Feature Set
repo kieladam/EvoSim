@@ -1,0 +1,6 @@
+Abstracted biota living in an environment, suffering pressures from environment and each other.
+
+  - Biota base body
+    - Genes for physical ability/expression
+    - Real-Time Evolution of Augmenting Topologies (rtNEAT) for behaviour
+
