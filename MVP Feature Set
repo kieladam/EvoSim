@@ -1,6 +1,14 @@
 Abstracted biota living in an environment, suffering pressures from environment and each other.
 
-  - Biota base body
-    - Genes for physical ability/expression
-    - Real-Time Evolution of Augmenting Topologies (rtNEAT) for behaviour
+* Biota base body
+  * Genes for physical ability/expression
+  * Real-Time Evolution of Augmenting Topologies (rtNEAT) for brain/behaviours
+  * Mutations for reproducton
+
+* Program utility
+  * Ability to navigate around the 2d worldspace
+  * Click on individual biota to drill into genes/ brain
+  * Menu for adjusting world settings/ parameters
+  * Ability to examine family tree (save dead biota stats)
+
 
