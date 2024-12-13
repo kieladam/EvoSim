@@ -1,6 +1,15 @@
 # EvoSim
 
-woo, all sorts of interesting things. never used markdown, so we'll see how this goes. 
+- [x] Markdown Checklist!
+- [ ] Feature Set for MVP
+- [ ] Code first pass
+- [ ] Code refactor
+- [ ] Code second pass
+- [ ] Art pass
+- [ ] Refactor
+- [ ] Refactor
+- [ ] Delete Everything and Start From Scratch
+- [ ] Refactor
+- [ ] Release Candidate!
+- [ ] Bugs abound
 
-- [ ] Checklist?
-- [ ] Checklist!
