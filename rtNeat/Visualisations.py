@@ -1,6 +1,5 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-import rtNeatDataClasses as dc
 
 def weightToRedGreen(w):
     if w < 0:
