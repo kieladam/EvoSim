@@ -9,45 +9,29 @@ def weightToRedGreen(w):
         colour = (0, w, 0)
     return colour
 
-def drawPhenotype(genome:dc.Genome):
-    #need a list of nodes (just numbers), a list of edges (tuples to go between nodes), and weights (to match with edges)
-    
+def drawPhenotype(genome, labels=None, node_size=1000, node_color='lightblue', arrow_size=20, font_size=10):
+    layers: dict = genome[0]
+    edges = genome[1]
 
-    pass
-
-def draw_directed_graph(edges, weights, layers, labels=None, node_size=1000, node_color='lightblue', 
-                       arrow_size=20, font_size=10):
-    """
-    Draw a directed graph given a list of edges.
-    
-    Args:
-    edges: List of tuples representing edges (from_node, to_node)
-    labels: Optional dictionary of node labels {node: label}
-    """
-    # Create a directed graph
     G = nx.DiGraph()
-    
-    # Add edges to the graph
-    for i, (start, end) in enumerate(edges):
-        G.add_edge(start, end, color=weightToRedGreen(weights[i]))
+    G.add_nodes_from(layers)
+    for node in layers:
+        G.nodes[node]['layer'] = layers[node]
+    for start, end, value in edges:
+        G.add_edge(start, end, color=weightToRedGreen(value), weight=value)
+    edge_colors = [G[u][v]['color'] for u, v in G.edges()]
+    edge_labels = {(u, v): f'{d['weight']:.2f}' 
+               for (u, v, d) in G.edges(data=True)}
 
-      # Set layer attributes
-    for node, layer in layers.items():
-        G.nodes[node]['layer'] = layer
-    
-    # Create the layout
     pos = nx.multipartite_layout(G, 
                             subset_key='layer',  # Node attribute for layer
                             align='vertical')  # 'vertical' for top-to-bottom
-    
-  
-    
-    # Create figure and axis
+     # Create figure and axis
     plt.figure(figsize=(10, 8), facecolor='gray')
-    colors = [G[u][v]['color'] for u, v in edges]
     # Draw the graph
     nx.draw_networkx_nodes(G, pos, node_color=node_color, node_size=node_size)
-    nx.draw_networkx_edges(G, pos, arrowsize=arrow_size, edge_color=colors, width=3)
+    nx.draw_networkx_edges(G, pos, arrowsize=arrow_size, edge_color=edge_colors, width=3)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, label_pos=0.1)
     
     # Add labels if provided, otherwise use node names
     if labels is None:
@@ -55,7 +39,6 @@ def draw_directed_graph(edges, weights, layers, labels=None, node_size=1000, nod
     nx.draw_networkx_labels(G, pos, labels, font_size=font_size)
     
     plt.axis('off')
-    
     plt.tight_layout()
-    
     return plt
+
