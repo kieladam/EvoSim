@@ -2,14 +2,14 @@ Abstracted biota living in an environment, suffering pressures from environment 
 
 * Biota base brain
 - [x] Genes for physical ability/expression
-  [x] Real-Time Evolution of Augmenting Topologies (rtNEAT) for brain/behaviours
-  [x] Mutations for reproducton
-  [x] Random starting state
+- [x] Real-Time Evolution of Augmenting Topologies (rtNEAT) for brain/behaviours
+- [x] Mutations for reproducton
+- [x] Random starting state
 
 * Biota base body
-  [ ] Senses
-  [ ] Abilities
-  [ ] Lifespan
+- [ ] Senses
+- [ ] Abilities
+- [ ] Lifespan
 
 * Program utility
   * Ability to navigate around the 2d worldspace
