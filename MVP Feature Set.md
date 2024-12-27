@@ -1,7 +1,7 @@
 Abstracted biota living in an environment, suffering pressures from environment and each other.
 
 * Biota base brain
-  [x] Genes for physical ability/expression
+- [x] Genes for physical ability/expression
   [x] Real-Time Evolution of Augmenting Topologies (rtNEAT) for brain/behaviours
   [x] Mutations for reproducton
   [x] Random starting state
