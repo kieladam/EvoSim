@@ -1,7 +1,7 @@
 # EvoSim
 
 - [x] Markdown Checklist!
-- [ ] Feature Set for MVP
+- [x] Feature Set for MVP
 - [ ] Code first pass
 - [ ] Code refactor
 - [ ] Code second pass
