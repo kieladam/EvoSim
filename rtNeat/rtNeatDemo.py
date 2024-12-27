@@ -1,5 +1,5 @@
 import numpy as np
-import refactoredNEAT as rfN
+import rtNeat.rtNeatImp as rfN
 import Visualisations as vi
 
 rng = np.random.default_rng(seed=42)

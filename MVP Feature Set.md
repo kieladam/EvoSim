@@ -5,6 +5,7 @@ Abstracted biota living in an environment, suffering pressures from environment 
   - [x] Real-Time Evolution of Augmenting Topologies (rtNEAT) for brain/behaviours
   - [x] Mutations for reproducton
   - [x] Random starting state
+  - [ ] Gene crossover
 
 * Biota base body
   - [ ] Senses
