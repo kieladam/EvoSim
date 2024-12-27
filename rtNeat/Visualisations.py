@@ -2,8 +2,11 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 def weightToRedGreen(w):
+    
     if w < 0:
         colour = (w*-1.0, 0, 0)
+    elif w > 1:
+        colour = (0, 1.0, 0)
     else:
         colour = (0, w, 0)
     return colour
@@ -16,15 +19,16 @@ def drawPhenotype(genome, labels=None, node_size=1000, node_color='lightblue', a
     G.add_nodes_from(layers)
     for node in layers:
         G.nodes[node]['layer'] = layers[node]
-    for start, end, value in edges:
-        G.add_edge(start, end, color=weightToRedGreen(value), weight=value)
+    for start, end, value, innovation in edges:
+        G.add_edge(start, end, color=weightToRedGreen(value), weight=value, inn=innovation)
     edge_colors = [G[u][v]['color'] for u, v in G.edges()]
-    edge_labels = {(u, v): f'{d['weight']:.2f}' 
+    edge_labels = {(u, v): f'{d['weight']:.2f}, Inx: {d['inn']}' 
                for (u, v, d) in G.edges(data=True)}
 
     pos = nx.multipartite_layout(G, 
                             subset_key='layer',  # Node attribute for layer
-                            align='vertical')  # 'vertical' for top-to-bottom
+                            align='vertical') # 'vertical' for top-to-bottom
+    
      # Create figure and axis
     plt.figure(figsize=(10, 8), facecolor='gray')
     # Draw the graph
